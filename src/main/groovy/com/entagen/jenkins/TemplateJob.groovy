@@ -12,6 +12,6 @@ class TemplateJob {
     }
     
     ConcreteJob concreteJobForBranch(String branchName) {
-        ConcreteJob concreteJob = new ConcreteJob(templateJob: this, branchName: branchName, jobName: jobNameForBranch(branchName) )
+        ConcreteJob concreteJob = new ConcreteJob(templateJob: this, branchName: branchName, jobName: jobNameForBranch(branchName))
     }
 }
