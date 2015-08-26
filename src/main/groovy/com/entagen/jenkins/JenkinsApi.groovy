@@ -69,7 +69,11 @@ class JenkinsApi {
 
     void startJob(ConcreteJob job) {
         println "Starting job ${job.jobName}."
-        post('job/' + job.jobName + '/build')
+        try {
+            post('job/' + job.jobName + '/build')
+        } catch (Exception ex) {
+            post('job/' + job.jobName + '/buildWithParameters')
+        }
     }
 
     String configForMissingJob(ConcreteJob missingJob, List<TemplateJob> templateJobs) {
